@@ -66,3 +66,41 @@
     </li>
     <li> Если при запуске программы появляется ошибка, необходимо файл "libmysql.dll", который находится в папке "all files", скопировать в папку, имеющий путь "C:\Program Files (x86)\MySQL\MySQL Server 5.7\lib\". Если это не помогло, необходимо скопировать этот же файл в основные системные папки Windows (System, System32, SysWOW64)</li>
   </ul>
+<br>
+<br>
+<br>
+<h1 align="center">Software development of the database of programming languages on Lazarus (Pascal) with output in Excel</h1>  
+<h2>The following data is stored in the database:: page_facing_up: </h2>
+<ul>
+<li>about the programming language:
+  <ul>
+    <li>The name of the programming language;</li>
+    <li>Date created;</li>
+    <li>Popular libraries and frameworks</li>
+    <li>History.</li>
+  </ul>
+ </li>
+ <li>about categories:
+  <ul>
+    <li>Language class.</li>
+  </ul>
+ </li>
+ <li>about the fields of application:
+   <ul>
+     <li>Scope of application.</li>
+   </ul>
+ </li>
+ <li>storing data about categories of a particular programming language:
+   <ul>
+     <li>The name of the programming language;</li>
+     <li>Language class.</li>
+   </ul>
+ </li>
+ <li>storing data about the application areas of a particular programming language:
+  <ul>
+    <li>The name of the programming language;</li>
+    <li>Scope of application.</li>
+  </ul>
+</li>
+</ul>
+<br>
