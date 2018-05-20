@@ -1,0 +1,340 @@
+object DM: TDM
+  OldCreateOrder = False
+  Height = 451
+  HorizontalOffset = 419
+  VerticalOffset = 144
+  Width = 268
+  PPI = 96
+  object MSC: TMySQL57Connection
+    Connected = True
+    LoginPrompt = False
+    DatabaseName = 'programming_languages'
+    KeepConnection = False
+    Params.Strings = (
+      'Port=3306'
+    )
+    Password = '090203'
+    Transaction = SQLT
+    UserName = 'root'
+    HostName = 'localhost'
+    SkipLibraryVersionCheck = False
+    left = 32
+    top = 24
+  end
+  object SQLT: TSQLTransaction
+    Active = True
+    Action = caCommit
+    Database = MSC
+    left = 112
+    top = 24
+  end
+  object dsLanguages: TDataSource
+    DataSet = sqLanguages
+    left = 112
+    top = 96
+  end
+  object sqCategory: TSQLQuery
+    IndexName = 'DEFAULT_ORDER'
+    FieldDefs = <    
+      item
+        Name = 'id_category'
+        DataType = ftAutoInc
+        Precision = -1
+      end    
+      item
+        Name = 'category'
+        DataType = ftString
+        Precision = -1
+        Size = 55
+      end>
+    Active = True
+    Database = MSC
+    Transaction = SQLT
+    SQL.Strings = (
+      'select * from category'
+    )
+    Options = [sqoAutoApplyUpdates]
+    Params = <>
+    UpdateMode = upWhereAll
+    left = 32
+    top = 160
+    object sqCategoryid_category: TAutoIncField
+      FieldKind = fkData
+      FieldName = 'id_category'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object sqCategorycategory: TStringField
+      FieldKind = fkData
+      FieldName = 'category'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 80
+    end
+  end
+  object dsCategory: TDataSource
+    DataSet = sqCategory
+    left = 112
+    top = 160
+  end
+  object dsApplying: TDataSource
+    DataSet = sqApplying
+    left = 112
+    top = 232
+  end
+  object sqApplying: TSQLQuery
+    IndexName = 'DEFAULT_ORDER'
+    FieldDefs = <    
+      item
+        Name = 'id_use'
+        DataType = ftAutoInc
+        Precision = -1
+      end    
+      item
+        Name = 'use_name'
+        DataType = ftString
+        Precision = -1
+        Size = 75
+      end>
+    Active = True
+    Database = MSC
+    Transaction = SQLT
+    SQL.Strings = (
+      'select * from applying'
+    )
+    Options = [sqoAutoApplyUpdates]
+    Params = <>
+    UpdateMode = upWhereAll
+    left = 32
+    top = 232
+    object sqApplyingid_use: TAutoIncField
+      FieldKind = fkData
+      FieldName = 'id_use'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object sqApplyinguse_name: TStringField
+      FieldKind = fkData
+      FieldName = 'use_name'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 75
+    end
+  end
+  object sqFirstTable: TSQLQuery
+    IndexName = 'DEFAULT_ORDER'
+    FieldDefs = <    
+      item
+        Name = 'id_pl'
+        DataType = ftSmallint
+        Precision = -1
+      end    
+      item
+        Name = 'id_category'
+        DataType = ftInteger
+        Precision = -1
+      end>
+    Active = True
+    Database = MSC
+    Transaction = SQLT
+    SQL.Strings = (
+      'select * from firsttable'
+    )
+    Options = [sqoAutoApplyUpdates]
+    Params = <>
+    UpdateMode = upWhereAll
+    left = 32
+    top = 296
+    object sqFirstTableid_pl: TSmallintField
+      FieldKind = fkData
+      FieldName = 'id_pl'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object sqFirstTableid_category: TLongintField
+      FieldKind = fkData
+      FieldName = 'id_category'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+  end
+  object sqSecondTable: TSQLQuery
+    IndexName = 'DEFAULT_ORDER'
+    FieldDefs = <    
+      item
+        Name = 'id_pl'
+        DataType = ftSmallint
+        Precision = -1
+      end    
+      item
+        Name = 'id_use'
+        DataType = ftInteger
+        Precision = -1
+      end>
+    Active = True
+    Database = MSC
+    Transaction = SQLT
+    SQL.Strings = (
+      'select * from secondtable'
+    )
+    Options = [sqoAutoApplyUpdates]
+    Params = <>
+    UpdateMode = upWhereAll
+    left = 32
+    top = 360
+    object sqSecondTableid_pl: TSmallintField
+      FieldKind = fkData
+      FieldName = 'id_pl'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object sqSecondTableid_use: TLongintField
+      FieldKind = fkData
+      FieldName = 'id_use'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+  end
+  object dsFirstTable: TDataSource
+    DataSet = sqFirstTable
+    left = 112
+    top = 296
+  end
+  object dsSecondTable: TDataSource
+    DataSet = sqSecondTable
+    left = 112
+    top = 360
+  end
+  object sqLanguages: TSQLQuery
+    IndexName = 'DEFAULT_ORDER'
+    FieldDefs = <    
+      item
+        Name = 'id_pl'
+        DataType = ftSmallint
+        Precision = -1
+      end    
+      item
+        Name = 'title'
+        DataType = ftString
+        Precision = -1
+        Size = 30
+      end    
+      item
+        Name = 'history'
+        DataType = ftMemo
+        Precision = -1
+      end    
+      item
+        Name = 'logo'
+        DataType = ftString
+        Precision = -1
+        Size = 200
+      end    
+      item
+        Name = 'create_year'
+        DataType = ftDate
+        Precision = -1
+      end    
+      item
+        Name = 'libs_frameworks'
+        DataType = ftString
+        Precision = -1
+        Size = 200
+      end>
+    Active = True
+    AfterScroll = sqLanguagesAfterScroll
+    Database = MSC
+    Transaction = SQLT
+    SQL.Strings = (
+      'select * from language'
+    )
+    Options = [sqoAutoApplyUpdates]
+    Params = <>
+    UpdateMode = upWhereAll
+    left = 32
+    top = 96
+    object sqLanguagesid_pl: TSmallintField
+      FieldKind = fkData
+      FieldName = 'id_pl'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object sqLanguagestitle: TStringField
+      FieldKind = fkData
+      FieldName = 'title'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 30
+    end
+    object sqLanguageshistory: TMemoField
+      FieldKind = fkData
+      FieldName = 'history'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftMemo
+      Transliterate = False
+    end
+    object sqLanguageslogo: TStringField
+      FieldKind = fkData
+      FieldName = 'logo'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 200
+    end
+    object sqLanguagescreate_year: TDateField
+      FieldKind = fkData
+      FieldName = 'create_year'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object sqLanguageslibs_frameworks: TStringField
+      FieldKind = fkData
+      FieldName = 'libs_frameworks'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 200
+    end
+  end
+end

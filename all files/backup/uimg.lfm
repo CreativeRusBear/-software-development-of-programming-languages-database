@@ -1,0 +1,44 @@
+object fImg: TfImg
+  Left = 279
+  Height = 265
+  Top = 119
+  Width = 287
+  Caption = 'Добавить или изменить логотип'
+  ClientHeight = 265
+  ClientWidth = 287
+  OnShow = FormShow
+  LCLVersion = '1.8.2.0'
+  object Image1: TImage
+    Left = 0
+    Height = 215
+    Top = 0
+    Width = 287
+    Align = alClient
+    Stretch = True
+  end
+  object AddAndEditBtn: TButton
+    Left = 0
+    Height = 25
+    Top = 240
+    Width = 287
+    Align = alBottom
+    Caption = 'Добавить/Изменить'
+    Enabled = False
+    OnClick = AddAndEditBtnClick
+    TabOrder = 0
+  end
+  object ObzorBtn: TButton
+    Left = 0
+    Height = 25
+    Top = 215
+    Width = 287
+    Align = alBottom
+    Caption = 'Обзор'
+    OnClick = ObzorBtnClick
+    TabOrder = 1
+  end
+  object opd: TOpenPictureDialog
+    left = 8
+    top = 8
+  end
+end

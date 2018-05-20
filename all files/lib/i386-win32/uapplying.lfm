@@ -1,0 +1,94 @@
+object fApplying: TfApplying
+  Left = 354
+  Height = 247
+  Top = 124
+  Width = 610
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
+  Caption = 'Область применения'
+  ClientHeight = 247
+  ClientWidth = 610
+  Font.CharSet = ANSI_CHARSET
+  Font.Height = -19
+  Font.Name = 'Tahoma'
+  Font.Pitch = fpVariable
+  Font.Quality = fqDraft
+  OnCloseQuery = FormCloseQuery
+  Position = poScreenCenter
+  LCLVersion = '1.8.2.0'
+  object dbnApplying: TDBNavigator
+    Left = 0
+    Height = 25
+    Top = 222
+    Width = 610
+    Align = alBottom
+    BeforeAction = dbnApplyingBeforeAction
+    BevelOuter = bvNone
+    ChildSizing.EnlargeHorizontal = crsScaleChilds
+    ChildSizing.EnlargeVertical = crsScaleChilds
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 100
+    ClientHeight = 25
+    ClientWidth = 610
+    DataSource = DM.dsApplying
+    Options = []
+    TabOrder = 0
+    VisibleButtons = [nbInsert, nbDelete, nbPost, nbCancel]
+  end
+  object dbApplying: TDBGrid
+    Left = 0
+    Height = 222
+    Top = 0
+    Width = 320
+    Align = alLeft
+    Color = clWindow
+    Columns = <    
+      item
+        Title.Caption = 'id_use'
+        Visible = False
+        FieldName = 'id_use'
+      end    
+      item
+        Alignment = taCenter
+        Title.Alignment = taCenter
+        Title.Caption = 'Область применения'
+        Width = 286
+        FieldName = 'use_name'
+      end>
+    DataSource = DM.dsApplying
+    Font.CharSet = RUSSIAN_CHARSET
+    Font.Height = -19
+    Font.Name = 'Tahoma'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentFont = False
+    ReadOnly = True
+    TabOrder = 1
+    TitleFont.CharSet = RUSSIAN_CHARSET
+    TitleFont.Height = -19
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Pitch = fpVariable
+    TitleFont.Quality = fqDraft
+  end
+  object DBEdit1: TDBEdit
+    Left = 328
+    Height = 31
+    Top = 40
+    Width = 272
+    DataField = 'use_name'
+    DataSource = DM.dsApplying
+    CharCase = ecNormal
+    MaxLength = 75
+    TabOrder = 2
+  end
+  object Label1: TLabel
+    Left = 328
+    Height = 23
+    Top = 10
+    Width = 186
+    Caption = 'Область применения'
+    ParentColor = False
+  end
+end
